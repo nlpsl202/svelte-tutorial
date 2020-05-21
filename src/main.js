@@ -3,7 +3,7 @@ import App from './App.svelte';
 const app = new App({
 	target: document.body,
 	props: {
-		name: '張肥'
+		name: '測試修改git'
 	}
 });
 
