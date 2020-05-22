@@ -1,6 +1,6 @@
 <script>
   export let name;
-  import Table from "svelte-data-tabu";
+  import Table from "@nlpsl202/svelte-data-tabu";
   import { HeaderConfig } from "./config/HeaderConfig.js";
   import Fetch from "./Fetch.svelte";
   import Form from "./Form.svelte";

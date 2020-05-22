@@ -10,6 +10,7 @@ export const HeaderConfig = {
         type: 'url',
         align: 'center',
         sortable: true,
+        url: "url",
     },
     tags: {
         name: 'tags',
