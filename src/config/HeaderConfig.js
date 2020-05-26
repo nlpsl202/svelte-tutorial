@@ -4,6 +4,8 @@ export const HeaderConfig = {
         type: 'text',
         align: 'center',
         sortable: true,
+        sortType: "int",
+        accessor: (d) => d.id,
     },
     title: {
         name: 'title',
@@ -11,11 +13,15 @@ export const HeaderConfig = {
         align: 'center',
         sortable: true,
         url: "url",
+        sortType: "string",
+        accessor: (d) => d.title,
     },
     tags: {
         name: 'tags',
         type: 'text',
         align: 'center',
         sortable: true,
+        sortType: "string",
+        accessor: (d) => d.tags,
     }
 }

@@ -4,7 +4,9 @@
   import { HeaderConfig } from "./config/HeaderConfig.js";
   import Fetch from "./Fetch.svelte";
   import Form from "./Form.svelte";
+  import Video from "./Video.svelte";
   let searchTerm;
+  let pinToTop = true;
   function handleSubmit() {
     const { value } = this.elements.search;
     searchTerm = value;
@@ -40,6 +42,7 @@
     <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
     to learn how to build Svelte apps.
   </p>
+  <Video/>
   <Form {handleSubmit} />
   <Fetch {searchTerm} let:data>
     <h1>A list of links</h1>
@@ -50,6 +53,6 @@
         </li>
       {/each}
     </ul> -->
-    <Table title="Table Title" config={HeaderConfig} {data} />
+    <Table title="Table Title" config={HeaderConfig} {data} {pinToTop} />
   </Fetch>
 </main>
