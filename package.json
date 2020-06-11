@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@nlpsl202/svelte-data-tabu": "0.0.1",
+    "elizabot": "0.0.3",
     "sirv-cli": "^0.4.4",
     "svelte-data-tabu": "^0.1.2"
   }

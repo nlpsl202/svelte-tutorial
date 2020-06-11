@@ -1,10 +1,12 @@
 <script>
   export let name;
+  import ChatBot from "./ChatBot.svelte";
   import Table from "@nlpsl202/svelte-data-tabu";
   import { HeaderConfig } from "./config/HeaderConfig.js";
   import Fetch from "./Fetch.svelte";
   import Form from "./Form.svelte";
   import Video from "./Video.svelte";
+  import Logo from "./Logo.svelte";
   let searchTerm;
   let pinToTop = true;
   function handleSubmit() {
@@ -42,7 +44,9 @@
     <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
     to learn how to build Svelte apps.
   </p>
-  <Video/>
+  <div style="height:300px;">
+    <ChatBot style="text-align: center;" />
+  </div>
   <Form {handleSubmit} />
   <Fetch {searchTerm} let:data>
     <h1>A list of links</h1>
