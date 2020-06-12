@@ -6,18 +6,19 @@
   import Form from "./Form.svelte";
   import Video from "./Video.svelte";
   import ChatBot from "./ChatBot.svelte";
-  import ToyBall from "./ToyBall.svelte";
+  import UploadFile from "./UploadFile.svelte";
   let searchTerm;
   let pinToTop = true;
+  let path='http://localhost:8000/upload';
   function handleSubmit() {
     const { value } = this.elements.search;
     searchTerm = value;
   }
 
-  import { spring } from 'svelte/motion';
+  import { spring } from "svelte/motion";
 
-	let coords = spring({ x: 50, y: 50 });
-	let size = spring(10);
+  let coords = spring({ x: 50, y: 50 });
+  let size = spring(10);
 </script>
 
 <style>
@@ -40,38 +41,16 @@
       max-width: none;
     }
   }
-
-  svg { width: 100%; height: 100%; margin: -8px; }
-	circle { fill: #ff3e00 }
 </style>
 
-<div style="position: absolute; right: 1em;">
-	<label>
-		<h3>stiffness ({coords.stiffness})</h3>
-		<input bind:value={coords.stiffness} type="range" min="0" max="1" step="0.01">
-	</label>
-
-	<label>
-		<h3>damping ({coords.damping})</h3>
-		<input bind:value={coords.damping} type="range" min="0" max="1" step="0.01">
-	</label>
-</div>
-<svg
-	on:mousemove="{e => coords.set({ x: e.clientX, y: e.clientY })}"
-	on:mousedown="{() => size.set(30)}"
-	on:mouseup="{() => size.set(10)}"
->
-	<circle cx={$coords.x} cy={$coords.y} r={$size}/>
-
 <main>
-
-
   <h1>Hello {name}!</h1>
   <p>
     Visit the
     <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
     to learn how to build Svelte apps.
   </p>
+  <UploadFile {path}></UploadFile>
   <div style="height:300px;">
     <ChatBot style="text-align: center;" />
   </div>
@@ -88,4 +67,3 @@
     <Table title="Table Title" config={HeaderConfig} {data} {pinToTop} />
   </Fetch>
 </main>
-</svg>
