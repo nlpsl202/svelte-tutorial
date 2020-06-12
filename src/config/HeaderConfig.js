@@ -1,27 +1,18 @@
 export const HeaderConfig = {
-    id: {
-        name: 'id',
+    no: {
+        name: 'no',
         type: 'text',
         align: 'center',
         sortable: true,
         sortType: "int",
-        accessor: (d) => d.id,
+        accessor: (d) => d.no,
     },
-    title: {
-        name: 'title',
-        type: 'url',
-        align: 'center',
-        sortable: true,
-        url: "url",
-        sortType: "string",
-        accessor: (d) => d.title,
-    },
-    tags: {
-        name: 'tags',
+    name: {
+        name: 'name',
         type: 'text',
         align: 'center',
         sortable: true,
         sortType: "string",
-        accessor: (d) => d.tags,
+        accessor: (d) => d.name,
     }
 }

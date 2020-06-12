@@ -7,9 +7,10 @@
   import Video from "./Video.svelte";
   import ChatBot from "./ChatBot.svelte";
   import UploadFile from "./UploadFile.svelte";
+  let jsonResponse;
   let searchTerm;
   let pinToTop = true;
-  let path='http://localhost:8000/upload';
+  let path = "http://localhost:8000/upload";
   function handleSubmit() {
     const { value } = this.elements.search;
     searchTerm = value;
@@ -50,20 +51,12 @@
     <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
     to learn how to build Svelte apps.
   </p>
-  <UploadFile {path}></UploadFile>
+  <UploadFile {path} />
   <div style="height:300px;">
     <ChatBot style="text-align: center;" />
   </div>
   <Form {handleSubmit} />
-  <Fetch {searchTerm} let:data>
-    <h1>LIST</h1>
-    <!-- <ul>
-      {#each data as link}
-        <li>
-          <a href={link.id}>{link.tags}</a>
-        </li>
-      {/each}
-    </ul> -->
-    <Table title="Table Title" config={HeaderConfig} {data} {pinToTop} />
+  <Fetch {searchTerm} {jsonResponse} let:data>
+    <Table title="LIST" config={HeaderConfig} {data} {pinToTop} />
   </Fetch>
 </main>
